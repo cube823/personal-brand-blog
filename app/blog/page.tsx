@@ -12,27 +12,38 @@ export default function BlogListPage() {
   );
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-3xl px-6 py-16">
-      <div className="mb-10 flex items-end justify-between">
-        <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">Blog</p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-900">
-            글 목록
-          </h1>
+    <main className="page-shell min-h-screen py-8 md:py-14">
+      <div className="grain-overlay" />
+
+      <div className="glass-panel rise-in mb-8 p-7 md:mb-10 md:p-10">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="text-label">Archive</p>
+            <h1 className="editorial-title mt-3 text-5xl leading-none text-[#281f12] md:text-6xl">
+              Notes & Essays
+            </h1>
+          </div>
+          <Link className="cta-chip transition-colors hover:bg-[#f4ead6]" href="/">
+            홈으로
+          </Link>
         </div>
-        <Link className="text-sm text-zinc-600 underline underline-offset-4" href="/">
-          홈으로
-        </Link>
       </div>
 
-      <ul className="space-y-4">
-        {sorted.map((post) => (
-          <li key={post.slug} className="rounded-xl border border-zinc-200 p-5">
-            <p className="text-xs text-zinc-500">{post.publishedAt}</p>
-            <Link className="mt-2 block text-xl font-medium text-zinc-900" href={`/blog/${post.slug}`}>
+      <ul className="space-y-4 md:space-y-5">
+        {sorted.map((post, index) => (
+          <li
+            key={post.slug}
+            className="glass-panel rise-in group p-6 transition-transform duration-300 hover:-translate-y-1"
+            style={{ animationDelay: `${index * 70 + 120}ms` }}
+          >
+            <p className="text-xs tracking-wide text-[var(--muted)]">{post.publishedAt}</p>
+            <Link
+              className="editorial-title mt-2 block text-3xl leading-tight text-[#2c2317] transition-colors group-hover:text-[var(--accent)]"
+              href={`/blog/${post.slug}`}
+            >
               {post.title}
             </Link>
-            <p className="mt-2 text-sm text-zinc-600">{post.summary}</p>
+            <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted)]">{post.summary}</p>
           </li>
         ))}
       </ul>

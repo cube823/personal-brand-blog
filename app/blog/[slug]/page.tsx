@@ -21,21 +21,28 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   }
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-3xl px-6 py-16">
-      <Link className="text-sm text-zinc-600 underline underline-offset-4" href="/blog">
-        목록으로
-      </Link>
+    <main className="page-shell min-h-screen py-8 md:py-14">
+      <div className="grain-overlay" />
+      <article className="glass-panel rise-in p-7 md:p-11">
+        <Link className="cta-chip transition-colors hover:bg-[#f4ead6]" href="/blog">
+          목록으로
+        </Link>
 
-      <article className="mt-6 space-y-6">
-        <header className="space-y-2 border-b border-zinc-200 pb-6">
-          <p className="text-xs text-zinc-500">{post.publishedAt}</p>
-          <h1 className="text-4xl font-semibold tracking-tight text-zinc-900">{post.title}</h1>
-          <p className="text-base text-zinc-600">{post.summary}</p>
+        <header className="mt-7 space-y-4 border-b border-[var(--border)] pb-8">
+          <p className="text-xs tracking-wide text-[var(--muted)]">{post.publishedAt}</p>
+          <h1 className="editorial-title text-4xl leading-tight text-[#251d12] md:text-6xl">
+            {post.title}
+          </h1>
+          <p className="max-w-3xl text-lg leading-8 text-[var(--muted)]">{post.summary}</p>
         </header>
 
-        <div className="space-y-4">
-          {post.content.map((paragraph) => (
-            <p key={paragraph} className="text-base leading-relaxed text-zinc-700">
+        <div className="space-y-5 pt-8">
+          {post.content.map((paragraph, index) => (
+            <p
+              key={paragraph}
+              className="rise-in max-w-3xl text-lg leading-9 text-[#3e3425]"
+              style={{ animationDelay: `${index * 90 + 140}ms` }}
+            >
               {paragraph}
             </p>
           ))}
