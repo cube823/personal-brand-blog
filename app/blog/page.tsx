@@ -13,17 +13,15 @@ export default function BlogListPage() {
 
   return (
     <main className="page-shell min-h-screen py-8 md:py-14">
-      <div className="grain-overlay" />
-
-      <div className="glass-panel rise-in mb-8 p-7 md:mb-10 md:p-10">
+      <div className="surface rise-in mb-8 p-7 md:mb-10 md:p-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-label">Archive</p>
-            <h1 className="editorial-title mt-3 text-5xl leading-none text-[#281f12] md:text-6xl">
+            <h1 className="display-title mt-3 text-5xl leading-none text-[#0f172a] md:text-6xl">
               Ethereum Notes
             </h1>
           </div>
-          <Link className="cta-chip transition-colors hover:bg-[#f4ead6]" href="/">
+          <Link className="chip" href="/">
             홈으로
           </Link>
         </div>
@@ -33,12 +31,12 @@ export default function BlogListPage() {
         {sorted.map((post, index) => (
           <li
             key={post.slug}
-            className="glass-panel rise-in group p-6 transition-transform duration-300 hover:-translate-y-1"
+            className="surface rise-in group p-6 transition-transform duration-300 hover:-translate-y-1"
             style={{ animationDelay: `${index * 70 + 120}ms` }}
           >
             <p className="text-xs tracking-wide text-[var(--muted)]">{post.publishedAt}</p>
             <Link
-              className="editorial-title mt-2 block text-3xl leading-tight text-[#2c2317] transition-colors group-hover:text-[var(--accent)]"
+              className="mt-2 block text-3xl font-semibold leading-tight text-[#0f172a] transition-colors group-hover:text-[var(--accent)]"
               href={`/blog/${post.slug}`}
             >
               {post.title}
