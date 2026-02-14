@@ -22,14 +22,24 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
   return (
     <main className="page-shell min-h-screen py-8 md:py-14">
+      <header className="top-nav rise-in">
+        <Link className="text-xl font-extrabold tracking-tight text-[#03c75a]" href="/">
+          CUBE NOTE
+        </Link>
+        <Link className="chip" href="/blog">
+          목록으로
+        </Link>
+      </header>
+
       <article className="surface rise-in p-7 md:p-11">
+        <div className="card-band -mx-7 -mt-7 mb-7 md:-mx-11 md:-mt-11 md:mb-10" />
         <Link className="chip" href="/blog">
           목록으로
         </Link>
 
         <header className="mt-7 space-y-4 border-b border-[var(--line)] pb-8">
           <p className="text-xs tracking-wide text-[var(--muted)]">{post.publishedAt}</p>
-          <h1 className="display-title text-4xl leading-tight text-[#0f172a] md:text-6xl">
+          <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-[#101828] md:text-6xl">
             {post.title}
           </h1>
           <p className="max-w-3xl text-lg leading-8 text-[var(--muted)]">{post.summary}</p>
