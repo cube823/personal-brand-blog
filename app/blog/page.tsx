@@ -2,8 +2,8 @@ import Link from "next/link";
 import { posts } from "@/lib/posts";
 
 export const metadata = {
-  title: "Blog | My Branding Blog",
-  description: "개인 브랜딩 블로그 글 목록",
+  title: "Blog | Ethereum Product Builder",
+  description: "이더리움, 인문학, 비즈니스 관점으로 정리한 실행 기록",
 };
 
 export default function BlogListPage() {
@@ -20,7 +20,7 @@ export default function BlogListPage() {
           <div>
             <p className="text-label">Archive</p>
             <h1 className="editorial-title mt-3 text-5xl leading-none text-[#281f12] md:text-6xl">
-              Notes & Essays
+              Ethereum Notes
             </h1>
           </div>
           <Link className="cta-chip transition-colors hover:bg-[#f4ead6]" href="/">

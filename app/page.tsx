@@ -16,31 +16,50 @@ export default function Page() {
 
         <div className="relative z-10 max-w-3xl space-y-6">
           <p className="text-label flex items-center gap-2">
-            <span className="accent-dot" /> Personal Studio
+            <span className="accent-dot" /> Ethereum Product Builder
           </p>
           <h1 className="editorial-title text-5xl leading-tight tracking-tight text-[var(--panel-ink)] md:text-7xl">
-            제품의 언어로
+            이더리움의 가능성을,
             <br />
-            기술을 설계합니다.
+            사람이 쓰는 제품으로 바꿉니다.
           </h1>
           <p className="max-w-2xl text-base leading-8 text-[var(--muted)] md:text-lg">
-            전략, UX, 프런트엔드 구현까지 연결해 실제로 동작하는 경험을 만듭니다.
-            개인 사이트에는 케이스 스터디를, 블로그에는 의사결정의 근거와 실험 기록을 남깁니다.
+            경영학과 인문학 기반의 프런트엔드 개발자로서, AI 시대에 필요한 창의력과 실행력을
+            무기로 제품을 만듭니다. 기술 설명에 그치지 않고 사람과 비즈니스 맥락까지 연결합니다.
           </p>
           <div className="flex flex-wrap gap-3 pt-3">
             <Link
               className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-[var(--accent-ink)] transition-transform duration-300 hover:-translate-y-0.5"
               href="/blog"
             >
-              아카이브 보기
+              아티클 보기
             </Link>
             <a
               className="rounded-full border border-[var(--border)] bg-[#fffaf2]/85 px-6 py-3 text-sm font-semibold text-[#4e4430] transition-transform duration-300 hover:-translate-y-0.5"
               href="mailto:hello@example.com"
             >
-              프로젝트 문의
+              함께 만들기
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="glass-panel rise-in mt-8 space-y-6 p-7 md:mt-10 md:p-10">
+        <p className="text-label">About</p>
+        <h2 className="editorial-title text-3xl leading-tight text-[#272117] md:text-4xl">
+          기술만 말하지 않고, 신뢰와 맥락까지 설계합니다.
+        </h2>
+        <p className="max-w-3xl text-base leading-8 text-[var(--muted)]">
+          5년 동안 프런트엔드 개발자로 일하며 화려한 타이틀보다 끝까지 문제를 해결하는 태도를
+          선택해왔습니다. 사교성, 근성, 팀플레이를 기반으로 불확실한 과제를 실행 가능한 결과로
+          바꾸는 것이 강점입니다.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {["Ethereum", "Humanities", "Business", "Execution", "Team Play"].map((item) => (
+            <span key={item} className="cta-chip">
+              {item}
+            </span>
+          ))}
         </div>
       </section>
 
